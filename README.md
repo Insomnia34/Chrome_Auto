@@ -1,23 +1,23 @@
 # chromeAuto
-撸毛群控，通过手动获取的网页元素，去批量执行。
+Manuel olarak web elementlerini kullanarak toplu işlemler gerçekleştirme
 
-## 打开网页
+## Web sayfasını aç
 `node chromeAuto.js open "URL"`
 
-## 点击网页
+## Sayfaya Tıklayın
 `node chromeAuto.js click "URL" "selector"`
 
-## 小狐狸钱包登录
+## Metamask Cüzdan Girişi
 `node chromeAuto.js metamaskLogin`
 
-## argentx钱包登录
+## Argentx Cüzdan Girişi
 `node chromeAuto.js argentLogin`
 
-## 网页输入内容
-`node chromeAuto.js input "URL" "selector" "输入内容"`
+## Web Sayfası Girişi
+`node chromeAuto.js input "URL" "selector" "Giriş içeriği"`
 
-## 关闭某个网页
+## Sayfayı Kapat
 `node chromeAuto.js close "URL"`
 
-## 导入switchyOmega配置
+## SwitchyOmega yapılandırmasını içe aktar
 `node chromeAuto.js proxyLoad`
