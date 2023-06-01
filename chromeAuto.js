@@ -61,7 +61,7 @@ async function BatchMetamaskLogin(){
 async function metamaskLogin(index, port, webSocketDebuggerUrl){
     const result = await isPortTaken(port, '127.0.0.1')
     if (result) {
-        console.log(index, result, port, "已启动！")
+        console.log(index, result, port, "aktif！")
     }
     else {
         return
@@ -84,7 +84,7 @@ async function metamaskLogin(index, port, webSocketDebuggerUrl){
             page.keyboard.press('Enter'),
             page.waitForNavigation({waitUntil: 'load'})
         ]);
-        console.log("第", index, "个", "metamask 已解锁！")
+        console.log("no", index, "个", "metamask unlocked！")
     }catch(e){
         console.log('e==>', e.message)
     }
@@ -92,7 +92,7 @@ async function metamaskLogin(index, port, webSocketDebuggerUrl){
     await browser.disconnect()
 }
 
-// 命令处理
+// command processing
 if (commandString == "proxyLoad"){
     console.log(commandString, "...")
     BatchProxyConfigLoad()
@@ -109,7 +109,7 @@ async function BatchProxyConfigLoad(){
 async function proxyConfigLoad(index, port, webSocketDebuggerUrl){
     const result = await isPortTaken(port, '127.0.0.1')
     if (result) {
-        console.log(index, result, port, "已启动！")
+        console.log(index, result, port, "Started!")
     }
     else {
         return
@@ -133,10 +133,10 @@ async function proxyConfigLoad(index, port, webSocketDebuggerUrl){
             page = await browser.newPage()
             await page.goto('chrome-extension://padekgcemlokbadohgkifijomclgjgif/options.html#!/io', { waitUntil: 'load' });
             //await page.click('button[ng-click="triggerFileInput()"] .ladda-label');
-            // 等待文件选择框出现
-            const inputElement = await page.$('input[type="file"]');    // 上传文件
+            // Dosya seçim kutusunun görünmesini bekleyin
+            const inputElement = await page.$('input[type="file"]');    // upload files
             await inputElement.uploadFile(filepath);
-            console.log(index, '文件上传完成！');
+            console.log(index, 'File upload complete！');
             await sleep(1000)
             await page.close()
             break
@@ -166,7 +166,7 @@ async function batchOpenURL(){
 async function openURL(index, port, webSocketDebuggerUrl){
     const result = await isPortTaken(port, '127.0.0.1')
     if (result) {
-        console.log(index, result, port, "已启动！")
+        console.log(index, result, port, "activated！")
     }
     else {
         return
@@ -181,7 +181,7 @@ async function openURL(index, port, webSocketDebuggerUrl){
     let page = await browser.newPage()
     try{
         await page.goto(varSting1, { waitUntil: 'load' });
-        console.log(index, '网页打开成功！');
+        console.log(index, 'Web sayfası başarıyla açıldı！');
         await sleep(1000)
     }
     catch(e){
@@ -208,7 +208,7 @@ async function argent(){
 async function argentLogin(index, port, webSocketDebuggerUrl){
     const result = await isPortTaken(port, '127.0.0.1')
     if (result) {
-        console.log(index, result, port, "已启动！")
+        console.log(index, result, port, "activated！")
     }
     else {
         return
@@ -231,7 +231,7 @@ async function argentLogin(index, port, webSocketDebuggerUrl){
             page.keyboard.press('Enter'),
             page.waitForNavigation({waitUntil: 'load'})
         ]);
-        console.log("第", index, "个", "argentx 已解锁！")
+        console.log("no", index, "个", "argentx unlocked！")
     }catch(e){
         console.log('e==>', e.message)
     }
@@ -256,7 +256,7 @@ async function batchClickElement(){
 async function click(index, port, webSocketDebuggerUrl, varSting1, varSting2) {
     const result = await isPortTaken(port, '127.0.0.1')
     if (result) {
-        console.log(index, result, port, "已启动！")
+        console.log(index, result, port, "activated！")
     }
     else {
         return
@@ -281,11 +281,11 @@ async function click(index, port, webSocketDebuggerUrl, varSting1, varSting2) {
                 }
             }
             let title = await currentPage.title()
-            console.log(index, "当前页面：", title)
-            // 获取所有具有类名 `.quests_verifyButton__GcXnP` 的元素
+            console.log(index, "The current page：", title)
+            // Sınıf adına sahip olan tüm öğeleri alın `.quests_verifyButton__GcXnP` Elementler
             const elements = await currentPage.$$(varSting2);
 
-            // 遍历元素并调用 `click` 方法
+            // öğeler üzerinde yineleme yapın ve arayın `click` yöntem
             for (let i = 0; i < elements.length; i++) {
                 await elements[i].click();
             }
@@ -319,7 +319,7 @@ async function batchInputElement(){
 async function input(index, port, webSocketDebuggerUrl, varSting1, varSting2, inputContent) {
     const result = await isPortTaken(port, '127.0.0.1')
     if (result) {
-        console.log(index, result, port, "已启动！")
+        console.log(index, result, port, "active！")
     }
     else {
         return
@@ -344,11 +344,11 @@ async function input(index, port, webSocketDebuggerUrl, varSting1, varSting2, in
                 }
             }
             let title = await currentPage.title()
-            console.log(index, "当前页面：", title)
-            // 获取所有具有类名 `.quests_verifyButton__GcXnP` 的元素
+            console.log(index, "geçerli sayfa：", title)
+            // Get all the classes with the name `.quests_verifyButton__GcXnP` Elements
             const elements = await currentPage.$$(varSting2);
 
-            // 遍历元素并调用 `click` 方法
+            // öğeler üzerinde yineleme yapın ve arayın `click` yöntem
             for (let i = 0; i < elements.length; i++) {
                 await elements[i].type(inputContent);
             }
@@ -382,7 +382,7 @@ async function batchClosePage(){
 async function closePage(index, port, webSocketDebuggerUrl, toCloseURL) {
     const result = await isPortTaken(port, '127.0.0.1')
     if (result) {
-        console.log(index, result, port, "已启动！")
+        console.log(index, result, port, "aktif！")
     }
     else {
         return
